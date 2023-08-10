@@ -4,3 +4,22 @@
   display: grid;
   place-content: center;
 }
+
+.main nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 100px;
+}
+
+.main nav a {
+  text-decoration: none;
+  border: 1px solid grey;
+  padding: 15px 20px;
+  margin-top: 20px;
+  border-radius: 6px;
+  color: black;
+  cursor: pointer;
+}

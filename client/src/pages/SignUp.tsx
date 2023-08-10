@@ -49,7 +49,6 @@ function SignUp() {
 
   function imageHandler(event: React.ChangeEvent<HTMLInputElement>) {
     event.preventDefault();
-    console.log();
 
     try {
       const reader = new FileReader();
@@ -68,21 +67,11 @@ function SignUp() {
     
   }, [image]);
 
-  function testHandler() {
-    const binaryString = atob(image.toString().split(',')[1]);
-    console.log("Here! ", binaryString);
-    
-    const blob = new Blob([binaryString], { type: "image/png" });
-    console.log("Blob", typeof blob);
-  }
-
   async function formHandler(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    console.log("Clicked");
     const imageBuffer = Buffer.from(image as ArrayBuffer);
     // const binaryString = atob(image.toString().split(',')[1]);
     // const blob = new Blob([binaryString], { type: "image/png" });
-    console.log("Blobba: ", imageBuffer);
     
     try {
       const res = await fetch("http://localhost:8080/create", {
@@ -109,9 +98,8 @@ function SignUp() {
 
       const data = await res.json();
 
-      if (res.status === 200) console.log(data);
     } catch (error) {
-      console.log("Error", error);
+      console.error("Error", error);
     }
   }
 
@@ -121,7 +109,6 @@ function SignUp() {
         <title>Sign Up</title>
       </Head>
 
-      <button onClick={testHandler}>Test Button</button>
       
       <form onSubmit={formHandler}>
         <div className={styles.header}>

@@ -10,6 +10,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { use, useEffect, useState } from "react";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -59,11 +60,9 @@ export default function Home() {
     getData();
     
     if (loaded) {
-      // console.log("HI ", (Buffer.from([123, 125])))
       const data = details![4].picture.data;
       const bug = Buffer.from(data);
       const str = bug.toString();
-      console.log(bug.toString("ascii"));
       
     }
     
@@ -79,6 +78,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
+        <nav><Link href={"/SignUp"}>Sign Up</Link></nav>
         <div className={styles.table}>
           <TableContainer component={Paper}>
             <Table sx={{ minWidth: 650 }} aria-label="simple table">

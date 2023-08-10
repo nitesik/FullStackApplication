@@ -5,7 +5,6 @@ const User = require("../service/user");
 class UserController {
   async createUser(req: any, res: any) {
     try {
-      console.log(req.body);
       
       const data = await User.createUser(req.body);
       res.status(200).json(data);
