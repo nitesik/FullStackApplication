@@ -1,0 +1,24 @@
+{
+  "name": "fullstack_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "migrate": "npx knex migrate:latest --knexfile db/knexfile.js",
+    "start": "nodemon index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "knex": "^2.5.1",
+    "pg": "^8.11.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/node": "^20.4.9",
+    "nodemon": "^3.0.1"
+  }
+}
